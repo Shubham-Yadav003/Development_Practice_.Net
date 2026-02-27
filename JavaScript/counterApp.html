@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+   <h2 id="count">0</h2>
+   <button id="likeBtn">Like</button>
+   <button id="disLikeBtn">Dislike</button>
+
+   <br>
+   <button id="themeBtn">Toggle Theme</button>
+
+   <br>
+   <textarea id="message"></textarea>
+   <p>Characters: <span id="charCount">0</span></p>
+   
+   
+   
+   <style>
+    .dark{
+        background-color: black;
+        color: white;
+    }
+   </style>
+
+   
+   <script>
+    document.getElementById("message").addEventListener("input", function(){
+        let length = this.value.length;
+        document.getElementById("charCount").innerText = length;
+    })
+
+    document.getElementById("themeBtn").addEventListener("click", function(){
+        document.body.classList.toggle("dark");
+    })
+    let count = 0;
+    document.getElementById("likeBtn").addEventListener("click", function(){
+        count++;
+        document.getElementById("count").innerText = count;
+    })
+
+    document.getElementById("disLikeBtn").addEventListener("click", function(){
+        count--;
+        document.getElementById("count").innerText = count;
+    })
+   </script>
+</body>
+</html>

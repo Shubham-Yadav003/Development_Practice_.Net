@@ -73,3 +73,46 @@ let multiply = function(a, b){
 console.log("Product: " + multiply(5, 10));
 
 //****************************************************************************************************** */
+// arrow function
+const addArrow = (a,b) => {
+    return a + b;
+}
+console.log("Sum (Arrow): " + addArrow(5, 10));
+
+//****************************************************************************************************** */
+// normal function
+function add(a,b){
+    return a+b;
+}
+console.log("Result:", add(5,5));
+
+//***************************************************************************************************** */
+// shorter arrow function
+const addShort = (a,b) => a + b;
+console.log("Sum (Short Arrow): " + addShort(5, 10));
+
+//****************************************************************************************************** */
+// arrow function with one parameter
+const square = x => x * x;
+console.log("Square of 5: " + square(5));
+
+//****************************************************************************************************** */
+// arrow function with array
+let numbers = [1, 2, 3, 4, 5];
+numbers.forEach(num => console.log("Number: " + num));
+
+//****************************************************************************************************** */
+// arrow function with map
+let doubled = numbers.map(num => num * 2);
+console.log("Doubled: " + doubled);
+
+//****************************************************************************************************** */
+// difference in this
+
+let person1 = {
+    name: "Ravi",
+    greet: function(){
+        console.log("Normal fnction this.name:", this.name);
+    }
+}
+person1.greet();

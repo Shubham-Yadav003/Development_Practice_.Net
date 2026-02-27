@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title"> Hello Student</h1>
+    <button onclick="changeText()"> Click Me </button>
+
+    <br>
+    <p id="para"> This is importnat text.</p>
+    <button onclick="changeColor()"> Change Color</button>
+
+    <br>
+    <input type="password" id="pwd">
+    <button onclick="togglePassword()"> Show </button>
+    <br>
+
+    <input type="text" id="taskInput">
+    <button onclick="addTask()"> Add Task </button>
+
+    <ul id="taskList"></ul>
+    <br><br><br>
+
+    <ul id="list">
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Banana</li>
+    </ul>
+
+    <script>
+        let items = document.querySelectorAll("#list li");
+
+        items.forEach(function(item){
+            item.addEventListener("click", function(){
+                item.remove();
+            })
+        })
+
+        function addTask(){
+            let taskValue = document.getElementById("taskInput").value;
+            if(taskValue.trim() !== ""){
+               let li = document.createElement("li");
+               li.innerText = taskValue;
+
+                document.getElementById("taskList").appendChild(li);
+                documnet.getElementById("taskInput").value = ""; // clear input field
+            }
+        }
+        function togglePassword(){
+            let input = document.getElementById("pwd");
+            if(input.type === "password"){
+                input.type = "text";
+            }else{
+                input.type = "password"
+            }
+        }
+
+        function changeColor(){
+            document.getElementById('para').style.color = "red";
+        }
+
+
+        function changeText(){
+            document.getElementById("title").innerText = "Hola Amigo kaysa ho thik ho?"
+        }
+    </script>
+</body>
+</html>
